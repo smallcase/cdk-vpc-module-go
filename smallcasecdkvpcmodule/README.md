@@ -1,16 +1,17 @@
 # cdk-vpc-module
+
 cdk-vpc-module construct library is an open-source extension of the AWS Cloud Development Kit (AWS CDK) to deploy configurable aws vpc  and its individual components in less than 50 lines of code and human readable configuration which can be managed by pull requests!
 
 ## :sparkles: Features
 
-- :white_check_mark: Option to configure custom IPv4 CIDR(10.10.0.0/24)
-- :white_check_mark: VPC Peering with  route table entry
-- :white_check_mark: Configurable NACL as per subnet group
-- :white_check_mark: NATGateway as per availabilityZones
-
+* :white_check_mark: Option to configure custom IPv4 CIDR(10.10.0.0/24)
+* :white_check_mark: VPC Peering with  route table entry
+* :white_check_mark: Configurable NACL as per subnet group
+* :white_check_mark: NATGateway as per availabilityZones
 
 Using cdk a vpc can be deployed using the following sample code snippet:
-```typescript
+
+```go
 import { Network } from "@smallcase/cdk-vpc-module/lib/constructs/network";
 import { aws_ec2 as ec2, App, Stack, StackProps } from "aws-cdk-lib";
 import { Construct } from "constructs";
@@ -150,6 +151,7 @@ new VPCStack(app, 'TEST', {
 });
 app.synth();
 ```
+
 Please refer [here](/API.md) to check how to use individual resource constructs.
 
 ## :clapper: Quick Start
@@ -158,8 +160,8 @@ The quick start shows you how to create an **AWS-VPC** using this module.
 
 ### Prerequisites
 
-- A working [`aws`](https://aws.amazon.com/cli/) CLI installation with access to an account and administrator privileges
-- You'll need a recent [NodeJS](https://nodejs.org) installation
+* A working [`aws`](https://aws.amazon.com/cli/) CLI installation with access to an account and administrator privileges
+* You'll need a recent [NodeJS](https://nodejs.org) installation
 
 To get going you'll need a CDK project. For details please refer to the [detailed guide for CDK](https://docs.aws.amazon.com/cdk/latest/guide/hello_world.html).
 
@@ -177,21 +179,25 @@ npx cdk bootstrap
 ```
 
 Install using NPM:
+
 ```
 npm install @smallcase/cdk-vpc-module
 ```
+
 Using yarn
+
 ```
 yarn add @smallcase/cdk-vpc-module
 ```
 
 Check the changed which are to be deployed
+
 ```bash
 ~ -> npx cdk diff
 ```
 
 Deploy using
+
 ```bash
 ~ -> npx cdk deploy
 ```
-
