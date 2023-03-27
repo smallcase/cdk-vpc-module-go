@@ -8,6 +8,7 @@ import (
 type VPCProps struct {
 	Subnets *[]ISubnetsProps `field:"required" json:"subnets" yaml:"subnets"`
 	Vpc *awsec2.VpcProps `field:"required" json:"vpc" yaml:"vpc"`
+	NatEipAllocationIds *[]*string `field:"optional" json:"natEipAllocationIds" yaml:"natEipAllocationIds"`
 	PeeringConfigs *map[string]*PeeringConfig `field:"optional" json:"peeringConfigs" yaml:"peeringConfigs"`
 }
 
