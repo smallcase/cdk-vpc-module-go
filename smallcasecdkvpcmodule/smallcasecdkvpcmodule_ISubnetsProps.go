@@ -16,6 +16,7 @@ type ISubnetsProps interface {
 	SubnetGroupName() *string
 	SubnetType() awsec2.SubnetType
 	Tags() *map[string]*string
+	UseSubnetForNAT() *bool
 }
 
 // The jsii proxy for ISubnetsProps
@@ -98,6 +99,16 @@ func (j *jsiiProxy_ISubnetsProps) Tags() *map[string]*string {
 	_jsii_.Get(
 		j,
 		"tags",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_ISubnetsProps) UseSubnetForNAT() *bool {
+	var returns *bool
+	_jsii_.Get(
+		j,
+		"useSubnetForNAT",
 		&returns,
 	)
 	return returns

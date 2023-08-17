@@ -23,6 +23,7 @@ func init() {
 			_jsii_.MemberProperty{JsiiProperty: "subnetGroupName", GoGetter: "SubnetGroupName"},
 			_jsii_.MemberProperty{JsiiProperty: "subnetType", GoGetter: "SubnetType"},
 			_jsii_.MemberProperty{JsiiProperty: "tags", GoGetter: "Tags"},
+			_jsii_.MemberProperty{JsiiProperty: "useSubnetForNAT", GoGetter: "UseSubnetForNAT"},
 		},
 		func() interface{} {
 			return &jsiiProxy_ISubnetsProps{}
