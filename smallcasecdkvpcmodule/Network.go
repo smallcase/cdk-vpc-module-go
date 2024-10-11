@@ -1,4 +1,3 @@
-// @smallcase/cdk-vpc-module
 package smallcasecdkvpcmodule
 
 import (
@@ -12,6 +11,7 @@ import (
 
 type Network interface {
 	constructs.Construct
+	EndpointOutputs() *map[string]interface{}
 	NatProvider() awsec2.NatProvider
 	NatSubnets() *[]awsec2.PublicSubnet
 	SetNatSubnets(val *[]awsec2.PublicSubnet)
@@ -21,6 +21,9 @@ type Network interface {
 	SetPbSubnets(val *[]awsec2.PublicSubnet)
 	PvSubnets() *[]awsec2.PrivateSubnet
 	SetPvSubnets(val *[]awsec2.PrivateSubnet)
+	SecurityGroupOutputs() *map[string]awsec2.SecurityGroup
+	Subnets() *map[string]*[]awsec2.Subnet
+	SetSubnets(val *map[string]*[]awsec2.Subnet)
 	Vpc() awsec2.Vpc
 	CreateSubnet(option ISubnetsProps, vpc awsec2.Vpc, peeringConnectionId *PeeringConnectionInternalType) *[]awsec2.Subnet
 	// Returns a string representation of this construct.
@@ -30,6 +33,16 @@ type Network interface {
 // The jsii proxy struct for Network
 type jsiiProxy_Network struct {
 	internal.Type__constructsConstruct
+}
+
+func (j *jsiiProxy_Network) EndpointOutputs() *map[string]interface{} {
+	var returns *map[string]interface{}
+	_jsii_.Get(
+		j,
+		"endpointOutputs",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_Network) NatProvider() awsec2.NatProvider {
@@ -77,6 +90,26 @@ func (j *jsiiProxy_Network) PvSubnets() *[]awsec2.PrivateSubnet {
 	_jsii_.Get(
 		j,
 		"pvSubnets",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_Network) SecurityGroupOutputs() *map[string]awsec2.SecurityGroup {
+	var returns *map[string]awsec2.SecurityGroup
+	_jsii_.Get(
+		j,
+		"securityGroupOutputs",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_Network) Subnets() *map[string]*[]awsec2.Subnet {
+	var returns *map[string]*[]awsec2.Subnet
+	_jsii_.Get(
+		j,
+		"subnets",
 		&returns,
 	)
 	return returns
@@ -149,6 +182,17 @@ func (j *jsiiProxy_Network)SetPvSubnets(val *[]awsec2.PrivateSubnet) {
 	_jsii_.Set(
 		j,
 		"pvSubnets",
+		val,
+	)
+}
+
+func (j *jsiiProxy_Network)SetSubnets(val *map[string]*[]awsec2.Subnet) {
+	if err := j.validateSetSubnetsParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"subnets",
 		val,
 	)
 }

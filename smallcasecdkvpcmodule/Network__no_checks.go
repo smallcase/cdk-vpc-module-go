@@ -1,6 +1,5 @@
 //go:build no_runtime_type_checking
 
-// @smallcase/cdk-vpc-module
 package smallcasecdkvpcmodule
 
 // Building without runtime type checking enabled, so all the below just return nil
@@ -22,6 +21,10 @@ func (j *jsiiProxy_Network) validateSetPbSubnetsParameters(val *[]awsec2.PublicS
 }
 
 func (j *jsiiProxy_Network) validateSetPvSubnetsParameters(val *[]awsec2.PrivateSubnet) error {
+	return nil
+}
+
+func (j *jsiiProxy_Network) validateSetSubnetsParameters(val *map[string]*[]awsec2.Subnet) error {
 	return nil
 }
 

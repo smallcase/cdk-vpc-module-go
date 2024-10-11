@@ -1,4 +1,3 @@
-// @smallcase/cdk-vpc-module
 package smallcasecdkvpcmodule
 
 import (

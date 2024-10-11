@@ -1,4 +1,3 @@
-// @smallcase/cdk-vpc-module
 package smallcasecdkvpcmodule
 
 import (
@@ -10,5 +9,6 @@ type VPCProps struct {
 	Vpc *awsec2.VpcProps `field:"required" json:"vpc" yaml:"vpc"`
 	NatEipAllocationIds *[]*string `field:"optional" json:"natEipAllocationIds" yaml:"natEipAllocationIds"`
 	PeeringConfigs *map[string]*PeeringConfig `field:"optional" json:"peeringConfigs" yaml:"peeringConfigs"`
+	VpcEndpoints *[]*VpcEndpointConfig `field:"optional" json:"vpcEndpoints" yaml:"vpcEndpoints"`
 }
 

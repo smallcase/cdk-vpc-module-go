@@ -1,6 +1,5 @@
 //go:build !no_runtime_type_checking
 
-// @smallcase/cdk-vpc-module
 package smallcasecdkvpcmodule
 
 import (
@@ -53,6 +52,14 @@ func (j *jsiiProxy_Network) validateSetPbSubnetsParameters(val *[]awsec2.PublicS
 }
 
 func (j *jsiiProxy_Network) validateSetPvSubnetsParameters(val *[]awsec2.PrivateSubnet) error {
+	if val == nil {
+		return fmt.Errorf("parameter val is required, but nil was provided")
+	}
+
+	return nil
+}
+
+func (j *jsiiProxy_Network) validateSetSubnetsParameters(val *map[string]*[]awsec2.Subnet) error {
 	if val == nil {
 		return fmt.Errorf("parameter val is required, but nil was provided")
 	}
