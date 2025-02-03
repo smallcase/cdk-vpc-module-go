@@ -42,6 +42,10 @@ func init() {
 			return &jsiiProxy_ISubnetsProps{}
 		},
 	)
+	_jsii_.RegisterStruct(
+		"@smallcase/cdk-vpc-module.LoadBalancerConfig",
+		reflect.TypeOf((*LoadBalancerConfig)(nil)).Elem(),
+	)
 	_jsii_.RegisterClass(
 		"@smallcase/cdk-vpc-module.Network",
 		reflect.TypeOf((*Network)(nil)).Elem(),
@@ -69,6 +73,10 @@ func init() {
 		reflect.TypeOf((*NetworkACL)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
+		"@smallcase/cdk-vpc-module.NetworkLoadBalancerConfig",
+		reflect.TypeOf((*NetworkLoadBalancerConfig)(nil)).Elem(),
+	)
+	_jsii_.RegisterStruct(
 		"@smallcase/cdk-vpc-module.PeeringConfig",
 		reflect.TypeOf((*PeeringConfig)(nil)).Elem(),
 	)
@@ -81,11 +89,19 @@ func init() {
 		reflect.TypeOf((*SecurityGroupRule)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
+		"@smallcase/cdk-vpc-module.TargetGroupConfig",
+		reflect.TypeOf((*TargetGroupConfig)(nil)).Elem(),
+	)
+	_jsii_.RegisterStruct(
 		"@smallcase/cdk-vpc-module.VPCProps",
 		reflect.TypeOf((*VPCProps)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
 		"@smallcase/cdk-vpc-module.VpcEndpointConfig",
 		reflect.TypeOf((*VpcEndpointConfig)(nil)).Elem(),
+	)
+	_jsii_.RegisterStruct(
+		"@smallcase/cdk-vpc-module.VpcEndpontServiceConfig",
+		reflect.TypeOf((*VpcEndpontServiceConfig)(nil)).Elem(),
 	)
 }

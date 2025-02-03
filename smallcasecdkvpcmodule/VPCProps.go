@@ -10,5 +10,6 @@ type VPCProps struct {
 	NatEipAllocationIds *[]*string `field:"optional" json:"natEipAllocationIds" yaml:"natEipAllocationIds"`
 	PeeringConfigs *map[string]*PeeringConfig `field:"optional" json:"peeringConfigs" yaml:"peeringConfigs"`
 	VpcEndpoints *[]*VpcEndpointConfig `field:"optional" json:"vpcEndpoints" yaml:"vpcEndpoints"`
+	VpcEndpointServices *[]*VpcEndpontServiceConfig `field:"optional" json:"vpcEndpointServices" yaml:"vpcEndpointServices"`
 }
 
