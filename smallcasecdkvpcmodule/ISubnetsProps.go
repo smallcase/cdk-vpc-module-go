@@ -11,7 +11,6 @@ type ISubnetsProps interface {
 	CidrBlock() *[]*string
 	EgressNetworkACL() *[]*NetworkACL
 	IngressNetworkACL() *[]*NetworkACL
-	IsMigration() *bool
 	Routes() *[]*AddRouteOptions
 	SubnetGroupName() *string
 	SubnetType() awsec2.SubnetType
@@ -59,16 +58,6 @@ func (j *jsiiProxy_ISubnetsProps) IngressNetworkACL() *[]*NetworkACL {
 	_jsii_.Get(
 		j,
 		"ingressNetworkACL",
-		&returns,
-	)
-	return returns
-}
-
-func (j *jsiiProxy_ISubnetsProps) IsMigration() *bool {
-	var returns *bool
-	_jsii_.Get(
-		j,
-		"isMigration",
 		&returns,
 	)
 	return returns
