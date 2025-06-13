@@ -32,6 +32,7 @@ func init() {
 			_jsii_.MemberProperty{JsiiProperty: "cidrBlock", GoGetter: "CidrBlock"},
 			_jsii_.MemberProperty{JsiiProperty: "egressNetworkACL", GoGetter: "EgressNetworkACL"},
 			_jsii_.MemberProperty{JsiiProperty: "ingressNetworkACL", GoGetter: "IngressNetworkACL"},
+			_jsii_.MemberProperty{JsiiProperty: "isMigration", GoGetter: "IsMigration"},
 			_jsii_.MemberProperty{JsiiProperty: "routes", GoGetter: "Routes"},
 			_jsii_.MemberProperty{JsiiProperty: "subnetGroupName", GoGetter: "SubnetGroupName"},
 			_jsii_.MemberProperty{JsiiProperty: "subnetType", GoGetter: "SubnetType"},
