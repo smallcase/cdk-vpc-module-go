@@ -4,7 +4,7 @@ package smallcasecdkvpcmodule
 
 // Building without runtime type checking enabled, so all the below just return nil
 
-func (n *jsiiProxy_Network) validateCreateSubnetParameters(option ISubnetsProps, vpc awsec2.Vpc, peeringConnectionId *PeeringConnectionInternalType) error {
+func (n *jsiiProxy_Network) validateCreateSubnetParameters(option ISubnetsProps, vpc awsec2.Vpc) error {
 	return nil
 }
 

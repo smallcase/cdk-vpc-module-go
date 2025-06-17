@@ -11,17 +11,13 @@ import (
 	"github.com/aws/constructs-go/constructs/v10"
 )
 
-func (n *jsiiProxy_Network) validateCreateSubnetParameters(option ISubnetsProps, vpc awsec2.Vpc, peeringConnectionId *PeeringConnectionInternalType) error {
+func (n *jsiiProxy_Network) validateCreateSubnetParameters(option ISubnetsProps, vpc awsec2.Vpc) error {
 	if option == nil {
 		return fmt.Errorf("parameter option is required, but nil was provided")
 	}
 
 	if vpc == nil {
 		return fmt.Errorf("parameter vpc is required, but nil was provided")
-	}
-
-	if err := _jsii_.ValidateStruct(peeringConnectionId, func() string { return "parameter peeringConnectionId" }); err != nil {
-		return err
 	}
 
 	return nil

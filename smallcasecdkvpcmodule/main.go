@@ -52,7 +52,6 @@ func init() {
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "createSubnet", GoMethod: "CreateSubnet"},
 			_jsii_.MemberProperty{JsiiProperty: "endpointOutputs", GoGetter: "EndpointOutputs"},
-			_jsii_.MemberProperty{JsiiProperty: "natProvider", GoGetter: "NatProvider"},
 			_jsii_.MemberProperty{JsiiProperty: "natSubnets", GoGetter: "NatSubnets"},
 			_jsii_.MemberProperty{JsiiProperty: "node", GoGetter: "Node"},
 			_jsii_.MemberProperty{JsiiProperty: "pbSubnets", GoGetter: "PbSubnets"},

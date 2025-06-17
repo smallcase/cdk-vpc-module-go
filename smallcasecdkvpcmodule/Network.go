@@ -12,7 +12,6 @@ import (
 type Network interface {
 	constructs.Construct
 	EndpointOutputs() *map[string]interface{}
-	NatProvider() awsec2.NatProvider
 	NatSubnets() *[]awsec2.PublicSubnet
 	SetNatSubnets(val *[]awsec2.PublicSubnet)
 	// The tree node.
@@ -25,7 +24,7 @@ type Network interface {
 	Subnets() *map[string]*[]awsec2.Subnet
 	SetSubnets(val *map[string]*[]awsec2.Subnet)
 	Vpc() awsec2.Vpc
-	CreateSubnet(option ISubnetsProps, vpc awsec2.Vpc, peeringConnectionId *PeeringConnectionInternalType) *[]awsec2.Subnet
+	CreateSubnet(option ISubnetsProps, vpc awsec2.Vpc) *[]awsec2.Subnet
 	// Returns a string representation of this construct.
 	ToString() *string
 }
@@ -40,16 +39,6 @@ func (j *jsiiProxy_Network) EndpointOutputs() *map[string]interface{} {
 	_jsii_.Get(
 		j,
 		"endpointOutputs",
-		&returns,
-	)
-	return returns
-}
-
-func (j *jsiiProxy_Network) NatProvider() awsec2.NatProvider {
-	var returns awsec2.NatProvider
-	_jsii_.Get(
-		j,
-		"natProvider",
 		&returns,
 	)
 	return returns
@@ -219,8 +208,8 @@ func Network_IsConstruct(x interface{}) *bool {
 	return returns
 }
 
-func (n *jsiiProxy_Network) CreateSubnet(option ISubnetsProps, vpc awsec2.Vpc, peeringConnectionId *PeeringConnectionInternalType) *[]awsec2.Subnet {
-	if err := n.validateCreateSubnetParameters(option, vpc, peeringConnectionId); err != nil {
+func (n *jsiiProxy_Network) CreateSubnet(option ISubnetsProps, vpc awsec2.Vpc) *[]awsec2.Subnet {
+	if err := n.validateCreateSubnetParameters(option, vpc); err != nil {
 		panic(err)
 	}
 	var returns *[]awsec2.Subnet
@@ -228,7 +217,7 @@ func (n *jsiiProxy_Network) CreateSubnet(option ISubnetsProps, vpc awsec2.Vpc, p
 	_jsii_.Invoke(
 		n,
 		"createSubnet",
-		[]interface{}{option, vpc, peeringConnectionId},
+		[]interface{}{option, vpc},
 		&returns,
 	)
 
