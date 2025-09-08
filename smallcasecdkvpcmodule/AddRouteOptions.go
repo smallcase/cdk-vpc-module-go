@@ -23,6 +23,7 @@ type AddRouteOptions struct {
 	//
 	EnablesInternetConnectivity *bool `field:"optional" json:"enablesInternetConnectivity" yaml:"enablesInternetConnectivity"`
 	ExistingVpcPeeringRouteKey *string `field:"optional" json:"existingVpcPeeringRouteKey" yaml:"existingVpcPeeringRouteKey"`
+	RouteName *string `field:"optional" json:"routeName" yaml:"routeName"`
 	RouterId *string `field:"optional" json:"routerId" yaml:"routerId"`
 }
 

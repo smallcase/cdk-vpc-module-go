@@ -9,6 +9,7 @@ type VPCProps struct {
 	Vpc *awsec2.VpcProps `field:"required" json:"vpc" yaml:"vpc"`
 	NatEipAllocationIds *[]*string `field:"optional" json:"natEipAllocationIds" yaml:"natEipAllocationIds"`
 	PeeringConfigs *map[string]*PeeringConfig `field:"optional" json:"peeringConfigs" yaml:"peeringConfigs"`
+	UseNestedStacks *bool `field:"optional" json:"useNestedStacks" yaml:"useNestedStacks"`
 	VpcEndpoints *[]*VpcEndpointConfig `field:"optional" json:"vpcEndpoints" yaml:"vpcEndpoints"`
 	VpcEndpointServices *[]*VpcEndpontServiceConfig `field:"optional" json:"vpcEndpointServices" yaml:"vpcEndpointServices"`
 }

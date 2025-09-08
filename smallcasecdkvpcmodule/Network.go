@@ -24,7 +24,8 @@ type Network interface {
 	Subnets() *map[string]*[]awsec2.Subnet
 	SetSubnets(val *map[string]*[]awsec2.Subnet)
 	Vpc() awsec2.Vpc
-	CreateSubnet(option ISubnetsProps, vpc awsec2.Vpc) *[]awsec2.Subnet
+	CreateSubnet(option ISubnetsProps, vpc awsec2.Vpc, peeringConnectionId *PeeringConnectionInternalType, useGlobalNestedStacks *bool) *[]awsec2.Subnet
+	MergeSubnetsByGroupNames(name *string, service interface{}, subnetGroupNames *[]*string, externalSubnets *[]IExternalVPEndpointSubnets) *awsec2.SelectedSubnets
 	// Returns a string representation of this construct.
 	ToString() *string
 }
@@ -208,8 +209,8 @@ func Network_IsConstruct(x interface{}) *bool {
 	return returns
 }
 
-func (n *jsiiProxy_Network) CreateSubnet(option ISubnetsProps, vpc awsec2.Vpc) *[]awsec2.Subnet {
-	if err := n.validateCreateSubnetParameters(option, vpc); err != nil {
+func (n *jsiiProxy_Network) CreateSubnet(option ISubnetsProps, vpc awsec2.Vpc, peeringConnectionId *PeeringConnectionInternalType, useGlobalNestedStacks *bool) *[]awsec2.Subnet {
+	if err := n.validateCreateSubnetParameters(option, vpc, peeringConnectionId); err != nil {
 		panic(err)
 	}
 	var returns *[]awsec2.Subnet
@@ -217,7 +218,23 @@ func (n *jsiiProxy_Network) CreateSubnet(option ISubnetsProps, vpc awsec2.Vpc) *
 	_jsii_.Invoke(
 		n,
 		"createSubnet",
-		[]interface{}{option, vpc},
+		[]interface{}{option, vpc, peeringConnectionId, useGlobalNestedStacks},
+		&returns,
+	)
+
+	return returns
+}
+
+func (n *jsiiProxy_Network) MergeSubnetsByGroupNames(name *string, service interface{}, subnetGroupNames *[]*string, externalSubnets *[]IExternalVPEndpointSubnets) *awsec2.SelectedSubnets {
+	if err := n.validateMergeSubnetsByGroupNamesParameters(name, service, subnetGroupNames); err != nil {
+		panic(err)
+	}
+	var returns *awsec2.SelectedSubnets
+
+	_jsii_.Invoke(
+		n,
+		"mergeSubnetsByGroupNames",
+		[]interface{}{name, service, subnetGroupNames, externalSubnets},
 		&returns,
 	)
 
