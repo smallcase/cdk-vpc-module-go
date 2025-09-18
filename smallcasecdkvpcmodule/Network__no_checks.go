@@ -8,10 +8,6 @@ func (n *jsiiProxy_Network) validateCreateSubnetParameters(option ISubnetsProps,
 	return nil
 }
 
-func (n *jsiiProxy_Network) validateMergeSubnetsByGroupNamesParameters(name *string, service interface{}, subnetGroupNames *[]*string) error {
-	return nil
-}
-
 func validateNetwork_IsConstructParameters(x interface{}) error {
 	return nil
 }

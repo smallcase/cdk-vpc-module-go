@@ -32,6 +32,18 @@ func (v *jsiiProxy_VpcEndpointServiceNestedStack) validateAddMetadataParameters(
 	return nil
 }
 
+func (v *jsiiProxy_VpcEndpointServiceNestedStack) validateAddStackTagParameters(tagName *string, tagValue *string) error {
+	if tagName == nil {
+		return fmt.Errorf("parameter tagName is required, but nil was provided")
+	}
+
+	if tagValue == nil {
+		return fmt.Errorf("parameter tagValue is required, but nil was provided")
+	}
+
+	return nil
+}
+
 func (v *jsiiProxy_VpcEndpointServiceNestedStack) validateAddTransformParameters(transform *string) error {
 	if transform == nil {
 		return fmt.Errorf("parameter transform is required, but nil was provided")
@@ -94,6 +106,14 @@ func (v *jsiiProxy_VpcEndpointServiceNestedStack) validateGetLogicalIdParameters
 func (v *jsiiProxy_VpcEndpointServiceNestedStack) validateRegionalFactParameters(factName *string) error {
 	if factName == nil {
 		return fmt.Errorf("parameter factName is required, but nil was provided")
+	}
+
+	return nil
+}
+
+func (v *jsiiProxy_VpcEndpointServiceNestedStack) validateRemoveStackTagParameters(tagName *string) error {
+	if tagName == nil {
+		return fmt.Errorf("parameter tagName is required, but nil was provided")
 	}
 
 	return nil

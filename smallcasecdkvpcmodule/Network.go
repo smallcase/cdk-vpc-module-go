@@ -12,6 +12,7 @@ import (
 type Network interface {
 	constructs.Construct
 	EndpointOutputs() *map[string]interface{}
+	NatProvider() awsec2.NatProvider
 	NatSubnets() *[]awsec2.PublicSubnet
 	SetNatSubnets(val *[]awsec2.PublicSubnet)
 	// The tree node.
@@ -25,7 +26,6 @@ type Network interface {
 	SetSubnets(val *map[string]*[]awsec2.Subnet)
 	Vpc() awsec2.Vpc
 	CreateSubnet(option ISubnetsProps, vpc awsec2.Vpc, peeringConnectionId *PeeringConnectionInternalType, useGlobalNestedStacks *bool) *[]awsec2.Subnet
-	MergeSubnetsByGroupNames(name *string, service interface{}, subnetGroupNames *[]*string, externalSubnets *[]IExternalVPEndpointSubnets) *awsec2.SelectedSubnets
 	// Returns a string representation of this construct.
 	ToString() *string
 }
@@ -40,6 +40,16 @@ func (j *jsiiProxy_Network) EndpointOutputs() *map[string]interface{} {
 	_jsii_.Get(
 		j,
 		"endpointOutputs",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_Network) NatProvider() awsec2.NatProvider {
+	var returns awsec2.NatProvider
+	_jsii_.Get(
+		j,
+		"natProvider",
 		&returns,
 	)
 	return returns
@@ -219,22 +229,6 @@ func (n *jsiiProxy_Network) CreateSubnet(option ISubnetsProps, vpc awsec2.Vpc, p
 		n,
 		"createSubnet",
 		[]interface{}{option, vpc, peeringConnectionId, useGlobalNestedStacks},
-		&returns,
-	)
-
-	return returns
-}
-
-func (n *jsiiProxy_Network) MergeSubnetsByGroupNames(name *string, service interface{}, subnetGroupNames *[]*string, externalSubnets *[]IExternalVPEndpointSubnets) *awsec2.SelectedSubnets {
-	if err := n.validateMergeSubnetsByGroupNamesParameters(name, service, subnetGroupNames); err != nil {
-		panic(err)
-	}
-	var returns *awsec2.SelectedSubnets
-
-	_jsii_.Invoke(
-		n,
-		"mergeSubnetsByGroupNames",
-		[]interface{}{name, service, subnetGroupNames, externalSubnets},
 		&returns,
 	)
 

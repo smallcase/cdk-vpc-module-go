@@ -27,34 +27,6 @@ func (n *jsiiProxy_Network) validateCreateSubnetParameters(option ISubnetsProps,
 	return nil
 }
 
-func (n *jsiiProxy_Network) validateMergeSubnetsByGroupNamesParameters(name *string, service interface{}, subnetGroupNames *[]*string) error {
-	if name == nil {
-		return fmt.Errorf("parameter name is required, but nil was provided")
-	}
-
-	if service == nil {
-		return fmt.Errorf("parameter service is required, but nil was provided")
-	}
-	switch service.(type) {
-	case awsec2.InterfaceVpcEndpointAwsService:
-		// ok
-	case awsec2.GatewayVpcEndpointAwsService:
-		// ok
-	case awsec2.InterfaceVpcEndpointService:
-		// ok
-	default:
-		if !_jsii_.IsAnonymousProxy(service) {
-			return fmt.Errorf("parameter service must be one of the allowed types: awsec2.InterfaceVpcEndpointAwsService, awsec2.GatewayVpcEndpointAwsService, awsec2.InterfaceVpcEndpointService; received %#v (a %T)", service, service)
-		}
-	}
-
-	if subnetGroupNames == nil {
-		return fmt.Errorf("parameter subnetGroupNames is required, but nil was provided")
-	}
-
-	return nil
-}
-
 func validateNetwork_IsConstructParameters(x interface{}) error {
 	if x == nil {
 		return fmt.Errorf("parameter x is required, but nil was provided")

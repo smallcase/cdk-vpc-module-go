@@ -139,6 +139,10 @@ type VpcEndpointServiceNestedStack interface {
 	// See: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/metadata-section-structure.html
 	//
 	AddMetadata(key *string, value interface{})
+	// Configure a stack tag.
+	//
+	// At deploy time, CloudFormation will automatically apply all stack tags to all resources in the stack.
+	AddStackTag(tagName *string, tagValue *string)
 	// Add a Transform to this stack. A Transform is a macro that AWS CloudFormation uses to process your template.
 	//
 	// Duplicate values are removed when stack is synthesized.
@@ -297,6 +301,10 @@ type VpcEndpointServiceNestedStack interface {
 	// If `defaultValue` is not given, it is an error if the fact is unknown for
 	// the given region.
 	RegionalFact(factName *string, defaultValue *string) *string
+	// Remove a stack tag.
+	//
+	// At deploy time, CloudFormation will automatically apply all stack tags to all resources in the stack.
+	RemoveStackTag(tagName *string)
 	// Rename a generated logical identities.
 	//
 	// To modify the naming scheme strategy, extend the `Stack` class and
@@ -685,6 +693,17 @@ func (v *jsiiProxy_VpcEndpointServiceNestedStack) AddMetadata(key *string, value
 	)
 }
 
+func (v *jsiiProxy_VpcEndpointServiceNestedStack) AddStackTag(tagName *string, tagValue *string) {
+	if err := v.validateAddStackTagParameters(tagName, tagValue); err != nil {
+		panic(err)
+	}
+	_jsii_.InvokeVoid(
+		v,
+		"addStackTag",
+		[]interface{}{tagName, tagValue},
+	)
+}
+
 func (v *jsiiProxy_VpcEndpointServiceNestedStack) AddTransform(transform *string) {
 	if err := v.validateAddTransformParameters(transform); err != nil {
 		panic(err)
@@ -790,6 +809,17 @@ func (v *jsiiProxy_VpcEndpointServiceNestedStack) RegionalFact(factName *string,
 	)
 
 	return returns
+}
+
+func (v *jsiiProxy_VpcEndpointServiceNestedStack) RemoveStackTag(tagName *string) {
+	if err := v.validateRemoveStackTagParameters(tagName); err != nil {
+		panic(err)
+	}
+	_jsii_.InvokeVoid(
+		v,
+		"removeStackTag",
+		[]interface{}{tagName},
+	)
 }
 
 func (v *jsiiProxy_VpcEndpointServiceNestedStack) RenameLogicalId(oldId *string, newId *string) {
